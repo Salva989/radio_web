@@ -10,7 +10,9 @@
     },
     "backend_type": "liquidsoap",
     "backend_config": {
-      "lang": "en_US"
+      "lang": "en_US",
+      "telnet_port": 8101,
+      "dj_port": 8102
     }
   },
   {
@@ -24,7 +26,9 @@
     },
     "backend_type": "liquidsoap",
     "backend_config": {
-      "lang": "en_US"
+      "lang": "en_US",
+      "telnet_port": 8103,
+      "dj_port": 8104
     }
   },
   {
@@ -38,7 +42,9 @@
     },
     "backend_type": "liquidsoap",
     "backend_config": {
-      "lang": "en_US"
+      "lang": "en_US",
+      "telnet_port": 8105,
+      "dj_port": 8106
     }
   }
 ]
