@@ -1,0 +1,72 @@
+- name: Deploy AzuraCast radio stack
+  hosts: radio
+  become: true
+  vars:
+    radio_app_dir: /opt/radio_web
+    radio_domain: radio.example.com
+    letsencrypt_email: admin@example.com
+    azuracast_timezone: UTC
+    azuracast_http_port: 80
+    azuracast_https_port: 443
+    azuracast_sftp_port: 2022
+    azuracast_release_version: stable
+    azuracast_puid: 1000
+    azuracast_pgid: 1000
+
+  tasks:
+    - name: Install Docker packages
+      ansible.builtin.apt:
+        name:
+          - ca-certificates
+          - curl
+          - docker.io
+          - docker-compose-plugin
+        state: present
+        update_cache: true
+
+    - name: Ensure Docker is running
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Create application directories
+      ansible.builtin.file:
+        path: "{{ radio_app_dir }}/{{ item }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+      loop:
+        - ""
+        - config
+
+    - name: Copy Docker Compose file
+      ansible.builtin.copy:
+        src: ../docker-compose.yml
+        dest: "{{ radio_app_dir }}/docker-compose.yml"
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Copy AzuraCast custom config
+      ansible.builtin.copy:
+        src: ../config/
+        dest: "{{ radio_app_dir }}/config/"
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Render environment file
+      ansible.builtin.template:
+        src: templates/env.j2
+        dest: "{{ radio_app_dir }}/.env"
+        owner: root
+        group: root
+        mode: "0600"
+
+    - name: Start AzuraCast
+      community.docker.docker_compose_v2:
+        project_src: "{{ radio_app_dir }}"
+        pull: always
+        state: present

@@ -16,6 +16,8 @@ A self-hosted radio stack based on AzuraCast with:
 - station planning and setup docs
 - dashboard scaffold in `api/dashboard`
 - Liquidsoap custom script examples in `config/liquidsoap`
+- Ansible deployment starter in `ansible/`
+- reverse proxy auth examples in `config/proxy/`
 - helper scripts for bootstrapping and API import examples
 
 ## Quick start
@@ -23,6 +25,7 @@ A self-hosted radio stack based on AzuraCast with:
 1. Copy env file:
    ```bash
    cp .env.example .env
+   cp azuracast.env.example azuracast.env
    ```
 2. Edit values for domain, email, timezone, and API credentials.
 3. Start AzuraCast:
@@ -33,6 +36,12 @@ A self-hosted radio stack based on AzuraCast with:
 5. Create the admin account.
 6. Create an API key in AzuraCast and add it to the dashboard `.env`.
 7. Use the station plan in `docs/stations.md` to create stations.
+   After first install, you can provision the planned station records with:
+   ```bash
+   export AZURACAST_API_URL=http://localhost/api
+   export AZURACAST_ADMIN_API_KEY=replace_me
+   node scripts/provision-stations.mjs
+   ```
 8. Launch the custom dashboard:
    ```bash
    cd api/dashboard
@@ -72,6 +81,9 @@ Not included by default. Add it only if you need video or visual overlays synchr
 
 ## Recommended next steps
 
-- add Terraform or Ansible if you want infra automation
-- add station provisioning through the AzuraCast API after the first install
-- wire the dashboard behind SSO or a reverse proxy auth layer for production
+- Copy `ansible/inventory.example.yml` and use `ansible/playbook.yml` when you
+  are ready to deploy this repo to a Linux Docker host.
+- Edit `config/stations/stations.json` and run
+  `node scripts/provision-stations.mjs` after the first AzuraCast install.
+- Put the dashboard behind SSO or reverse proxy auth before production; see
+  `docs/production-auth.md`.

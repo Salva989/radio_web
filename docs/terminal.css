@@ -1,0 +1,73 @@
+:root {
+  color-scheme: dark;
+  background: #000;
+  color: #f2f2f2;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;
+}
+
+.terminal {
+  min-height: 100vh;
+  width: 100%;
+  padding: clamp(16px, 4vw, 48px);
+}
+
+.screen {
+  margin: 0;
+  max-width: 104ch;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  color: #f4f4f4;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.12);
+}
+
+.muted {
+  color: #7a7a7a;
+}
+
+.path {
+  color: #00ff66;
+}
+
+a {
+  color: #00ff66;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #fff;
+  background: #00ff66;
+  outline: 0;
+}
+
+::selection {
+  color: #000;
+  background: #00ff66;
+}
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .terminal {
+    padding: 14px;
+  }
+}

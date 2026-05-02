@@ -39,6 +39,18 @@
 
 ## Create the stations in AzuraCast
 
+After the initial AzuraCast web installer is complete, you can create these
+station shells from `config/stations/stations.json`:
+
+```bash
+export AZURACAST_API_URL=http://localhost/api
+export AZURACAST_ADMIN_API_KEY=replace_me
+node scripts/provision-stations.mjs
+```
+
+The script skips stations that already exist by `short_name`, so it is safe to
+rerun after editing the station config.
+
 For each station set:
 
 - a unique station name and short name

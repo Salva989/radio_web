@@ -1,0 +1,7 @@
+dashboard.radio.example.com {
+  basicauth {
+    admin $2a$14$replace_with_caddy_hash_password_output
+  }
+
+  reverse_proxy 127.0.0.1:3000
+}

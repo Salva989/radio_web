@@ -1,0 +1,12 @@
+all:
+  hosts:
+    radio:
+      ansible_host: radio.example.com
+      ansible_user: ubuntu
+      radio_domain: radio.example.com
+      letsencrypt_email: admin@example.com
+      azuracast_timezone: UTC
+      azuracast_http_port: 80
+      azuracast_https_port: 443
+      azuracast_sftp_port: 2022
+      azuracast_release_version: stable

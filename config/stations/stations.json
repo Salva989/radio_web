@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Azura One",
+    "short_name": "azura_one",
+    "description": "Main hits automation",
+    "genre": "Hits",
+    "frontend_type": "icecast",
+    "frontend_config": {
+      "port": 8000
+    },
+    "backend_type": "liquidsoap",
+    "backend_config": {
+      "lang": "en_US"
+    }
+  },
+  {
+    "name": "Azura Chill",
+    "short_name": "azura_chill",
+    "description": "Chill and ambient",
+    "genre": "Chillout",
+    "frontend_type": "icecast",
+    "frontend_config": {
+      "port": 8001
+    },
+    "backend_type": "liquidsoap",
+    "backend_config": {
+      "lang": "en_US"
+    }
+  },
+  {
+    "name": "Azura Talk",
+    "short_name": "azura_talk",
+    "description": "Talk and live shows",
+    "genre": "Talk",
+    "frontend_type": "icecast",
+    "frontend_config": {
+      "port": 8002
+    },
+    "backend_type": "liquidsoap",
+    "backend_config": {
+      "lang": "en_US"
+    }
+  }
+]

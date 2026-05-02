@@ -1,4 +1,5 @@
 .env
+azuracast.env
 api/dashboard/.env
 api/dashboard/node_modules
 api/dashboard/dist

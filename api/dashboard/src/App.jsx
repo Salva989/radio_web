@@ -30,7 +30,7 @@ function StatCard({ label, value, accent }) {
 export default function App() {
   const [stations, setStations] = useState([])
   const [nowPlaying, setNowPlaying] = useState([])
-  const [status, setStatus] = useState('Loading…')
+  const [status, setStatus] = useState('Loading...')
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function App() {
                   <div className="subtle">{station.now_playing?.song?.title || 'No track'}</div>
                 </div>
                 <div>
-                  {station.live?.is_live ? 'Live' : 'AutoDJ'} · {station.listeners?.total || 0} listeners
+                  {station.live?.is_live ? 'Live' : 'AutoDJ'} - {station.listeners?.total || 0} listeners
                 </div>
               </div>
             ))}

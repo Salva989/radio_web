@@ -27,3 +27,5 @@ Recommended options:
 - Cloudflare Access
 - Tailscale funnel or tailnet-only access
 - SSO via Authelia or Authentik
+
+See `docs/production-auth.md` and `config/proxy/` for starter proxy examples.
