@@ -1,0 +1,30 @@
+services:
+  azuracast:
+    image: ghcr.io/azuracast/azuracast:${AZURACAST_RELEASE_VERSION:-stable}
+    container_name: azuracast
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${AZURACAST_HTTP_PORT:-80}:80"
+      - "${AZURACAST_HTTPS_PORT:-443}:443"
+      - "${AZURACAST_SFTP_PORT:-2022}:2022"
+      - "8000-8010:8000-8010"
+      - "8443:8443"
+    volumes:
+      - station_data:/var/azuracast/stations
+      - backups:/var/azuracast/backups
+      - db_data:/var/lib/mysql
+      - config_data:/var/azuracast/www_tmp
+      - ./config:/var/azuracast/custom
+    environment:
+      APPLICATION_ENV: production
+      TZ: ${TZ:-UTC}
+      PUID: ${AZURACAST_PUID:-1000}
+      PGID: ${AZURACAST_PGID:-1000}
+
+volumes:
+  station_data:
+  backups:
+  db_data:
+  config_data:
