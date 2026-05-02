@@ -6,7 +6,7 @@
     "genre": "Hits",
     "frontend_type": "icecast",
     "frontend_config": {
-      "port": 8000
+      "port": 8001
     },
     "backend_type": "liquidsoap",
     "backend_config": {
@@ -20,7 +20,7 @@
     "genre": "Chillout",
     "frontend_type": "icecast",
     "frontend_config": {
-      "port": 8001
+      "port": 8002
     },
     "backend_type": "liquidsoap",
     "backend_config": {
@@ -34,7 +34,7 @@
     "genre": "Talk",
     "frontend_type": "icecast",
     "frontend_config": {
-      "port": 8002
+      "port": 8003
     },
     "backend_type": "liquidsoap",
     "backend_config": {

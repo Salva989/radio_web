@@ -25,16 +25,32 @@ body {
   min-height: 100vh;
   width: 100%;
   padding: clamp(16px, 4vw, 48px);
+  display: grid;
+  align-items: center;
 }
 
 .screen {
   margin: 0;
-  max-width: 104ch;
+  max-width: 72ch;
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: anywhere;
   color: #f4f4f4;
   text-shadow: 0 0 10px rgba(0, 255, 102, 0.12);
+}
+
+.player-shell {
+  width: min(100%, 72ch);
+}
+
+.audio-player {
+  width: 100%;
+  height: 42px;
+  margin-top: 18px;
+  color: #00ff66;
+  background: #000;
+  border: 1px solid #00ff66;
+  border-radius: 0;
 }
 
 .muted {

@@ -6,7 +6,8 @@ import process from 'node:process'
 
 const apiUrl = process.env.AZURACAST_API_URL
 const apiKey = process.env.AZURACAST_ADMIN_API_KEY
-const configPath = process.argv[2] || 'config/stations/stations.json'
+const configPath = process.argv.find((arg) => !arg.startsWith('--') && arg !== process.argv[0] && arg !== process.argv[1])
+  || 'config/stations/stations.json'
 const dryRun = process.argv.includes('--dry-run')
 
 if (!apiUrl || !apiKey) {

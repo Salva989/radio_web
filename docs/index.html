@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="./terminal.css">
   </head>
   <body>
-    <main class="terminal" aria-label="radio_web public terminal">
-      <pre class="screen" aria-live="polite"><span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ ./radio_web --status
+    <main class="terminal" aria-label="radio_web public player">
+      <section class="player-shell">
+        <pre class="screen" aria-label="radio_web station header"><span class="muted">salva@radio_web</span>:<span class="path">~/live</span>$ ./tune azura_one
 
                  _ _             __          __
  _ __ __ _  __ _(_) | ___        \ \        / /__  ___
@@ -21,54 +22,19 @@
 |_|  \__,_|\__, |_|_|\___/          \__/\__/ \___||___/
            |___/
 
-[boot] loading public radio stack manifest
-[ok]   project: radio_web
-[ok]   engine: AzuraCast + Docker Compose
-[ok]   channels planned: azura_one, azura_chill, azura_talk
-[ok]   dashboard: custom admin console, API-backed, private by design
-[ok]   liquidsoap: eq, effects, and station hooks tracked in git
+[stream] channel: azura_one
+[status] waiting for signal
 
-<span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ cat stations.txt
-
-ID          FORMAT                         STATUS
-azura_one   hits / automation              planned
-azura_chill chill / ambient / focus        planned
-azura_talk  talk / interviews / live       planned
-
-<span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ cat stack.txt
-
-docker-compose.yml       AzuraCast service definition
-azuracast.env            app/database bootstrap variables
-config/liquidsoap/       broadcast processing snippets
-config/stations/         station definitions and Liquidsoap hooks
-api/dashboard/           private React admin dashboard
-scripts/                 bootstrap and station provisioning tools
-
-<span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ ./quickstart
-
-1. cp .env.example .env
-2. cp azuracast.env.example azuracast.env
-3. docker compose up -d
-4. open http://localhost
-5. create admin account
-6. generate API key
-7. node scripts/provision-stations.mjs
-
-<span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ ls docs
-
-<a href="./stations.md">stations.md</a>
-<a href="./dashboard.md">dashboard.md</a>
-<a href="./liquidsoap.md">liquidsoap.md</a>
-<a href="./owncast.md">owncast.md</a>
-<a href="./production-auth.md">production-auth.md</a>
-
-<span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ printf "repository: "
-<a href="https://github.com/Salva989/radio_web">https://github.com/Salva989/radio_web</a>
-
-<span class="muted">salva@radio_web</span>:<span class="path">~/public</span>$ tail -f signal.log
-[stream] public interface online
-[stream] admin surfaces remain private
-[stream] waiting for broadcast...</pre>
+<span class="muted">salva@radio_web</span>:<span class="path">~/live</span>$ play --channel azura_one</pre>
+        <audio
+          class="audio-player"
+          controls
+          preload="none"
+          src="http://localhost/listen/azura_one/radio.mp3"
+        >
+          audio stream unavailable
+        </audio>
+      </section>
     </main>
   </body>
 </html>
