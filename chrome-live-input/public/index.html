@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chrome Live Input</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="status-band">
+        <div>
+          <p class="eyebrow">radio_web local relay</p>
+          <h1>Chrome Live Input</h1>
+        </div>
+        <div class="signal" id="statusSignal">idle</div>
+      </section>
+
+      <section class="controls">
+        <button id="startButton" type="button">Start Capture</button>
+        <button id="testToneButton" type="button">Test Tone</button>
+        <button id="stopButton" type="button" disabled>Stop</button>
+      </section>
+
+      <section class="meter-panel">
+        <div class="meter-header">
+          <h2>Captured Audio</h2>
+          <span id="audioLevelText">0%</span>
+        </div>
+        <div class="meter">
+          <div id="audioLevelBar"></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>AzuraCast</h2>
+          <dl>
+            <div>
+              <dt>Station</dt>
+              <dd id="stationName">...</dd>
+            </div>
+            <div>
+              <dt>Target</dt>
+              <dd id="target">...</dd>
+            </div>
+            <div>
+              <dt>Credentials</dt>
+              <dd id="credentials">...</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="panel">
+          <h2>Now Playing</h2>
+          <dl>
+            <div>
+              <dt>Status</dt>
+              <dd id="stationState">...</dd>
+            </div>
+            <div>
+              <dt>Track</dt>
+              <dd id="track">...</dd>
+            </div>
+            <div>
+              <dt>Listeners</dt>
+              <dd id="listeners">...</dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+
+      <section class="log-panel">
+        <h2>Session Log</h2>
+        <dl class="diagnostics">
+          <div>
+            <dt>Relay</dt>
+            <dd id="relayState">...</dd>
+          </div>
+          <div>
+            <dt>Browser bytes</dt>
+            <dd id="browserBytes">0</dd>
+          </div>
+          <div>
+            <dt>Sent bytes</dt>
+            <dd id="sentBytes">0</dd>
+          </div>
+          <div>
+            <dt>Frames</dt>
+            <dd id="frameCount">0</dd>
+          </div>
+          <div>
+            <dt>Last error</dt>
+            <dd id="lastError">none</dd>
+          </div>
+        </dl>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

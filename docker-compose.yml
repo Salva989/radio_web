@@ -11,6 +11,7 @@ services:
       - "${AZURACAST_HTTPS_PORT:-443}:443"
       - "${AZURACAST_SFTP_PORT:-2022}:2022"
       - "8000-8010:8000-8010"
+      - "8101-8110:8101-8110"
       - "8443:8443"
     volumes:
       - station_data:/var/azuracast/stations

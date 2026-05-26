@@ -63,6 +63,7 @@ AzuraCast supports live DJ / streamers per station. The included docs cover:
 - enabling live broadcasting
 - source passwords / mount points
 - suggested OBS / BUTT encoder settings
+- Chrome-to-radio local routing via `chrome-live-input/`
 
 ## Liquidsoap customization
 
