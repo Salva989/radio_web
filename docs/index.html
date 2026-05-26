@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="radio_web public interface: a terminal-first AzuraCast radio stack project."
+      content="radio_web public interface: a terminal-first Icecast radio stream."
     >
     <title>radio_web :: terminal public interface</title>
     <link rel="stylesheet" href="./terminal.css">
@@ -13,7 +13,7 @@
   <body>
     <main class="terminal" aria-label="radio_web public player">
       <section class="player-shell">
-        <pre class="screen" aria-label="radio_web station header"><span class="muted">salva@radio_web</span>:<span class="path">~/live</span>$ ./tune azura_one
+        <pre class="screen" aria-label="radio_web station header"><span class="muted">salva@radio_web</span>:<span class="path">~/live</span>$ ./tune live
 
                  _ _             __          __
  _ __ __ _  __ _(_) | ___        \ \        / /__  ___
@@ -22,16 +22,16 @@
 |_|  \__,_|\__, |_|_|\___/          \__/\__/ \___||___/
            |___/
 
-[stream] channel: azura_one
+[stream] channel: live.mp3
 [status] live
-[now] Chrome Live Input / Azura One
+[now] Chrome Live Input / Icecast
 
-<span class="muted">salva@radio_web</span>:<span class="path">~/live</span>$ play --channel azura_one</pre>
+<span class="muted">salva@radio_web</span>:<span class="path">~/live</span>$ play --mount /live.mp3</pre>
         <audio
           class="audio-player"
           controls
           preload="none"
-          src="http://127.0.0.1:8001/radio.mp3"
+          src="http://34.154.172.214:8000/live.mp3"
         >
           audio stream unavailable
         </audio>

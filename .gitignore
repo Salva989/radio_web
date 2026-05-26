@@ -1,5 +1,6 @@
 .env
 azuracast.env
+chrome-live-input/azuracast-live.env
 api/dashboard/.env
 api/dashboard/node_modules
 api/dashboard/dist
